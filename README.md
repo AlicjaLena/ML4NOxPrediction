@@ -52,6 +52,19 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/sjagkoo7/fu
 ---
 
 ## 🚀 How to Run
+## Setting Up Kaggle API
+
+To download datasets from Kaggle, you need to set up the Kaggle API:
+
+1. Log in to [Kaggle](https://www.kaggle.com).
+2. Go to "My Account" > "API" > "Create New API Token".
+3. Download the `kaggle.json` file.
+4. Place `kaggle.json` in the following location:
+   - **Windows**: `C:\Users\<YourUsername>\.kaggle\kaggle.json`
+   - **Linux/Mac**: `~/.kaggle/kaggle.json`
+5. Make sure the file has the correct permissions:
+   ```bash
+   chmod 600 ~/.kaggle/kaggle.json
 
 ### Prerequisites
 
