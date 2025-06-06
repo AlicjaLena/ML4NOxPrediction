@@ -1,70 +1,71 @@
-# Predicting-CO-and-NOx-Emissions-Using-Deep-Learning
-This project uses sensor data from a gas turbine to predict emissions of Carbon Monoxide (CO) and Nitrogen Oxides (NOx) using a deep learning approach. The dataset contains 11 features related to the operating conditions of the turbine, which serve as inputs to the model.
+# 💨 Predicting NOx Emissions in Gas Turbines Using Machine Learning
+This project focuses on predicting nitrogen oxides (NOₓ) emissions from gas turbines using supervised machine learning models. The dataset consists of real-world operational measurements collected from a gas turbine over five years, and includes engineered features designed to improve model generalization in dynamic conditions.
 
 ## 📊 Dataset
 
-The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/sjagkoo7/fuel-gas-emission/data) and contains hourly aggregated sensor measurements from a gas turbine. It includes the following features: 
+The dataset is publicly available from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/551/gas+turbine+co+and+nox+emission+data+set). It contains hourly measurements from a gas turbine fueled by natural gas. 
 
-- **AT**: Ambient Temperature
-- **AP**: Ambient Pressure
-- **AH**: Ambient Humidity
-- **AFDP**: Air Filter Differential Pressure
-- **GTEP**: Gas Turbine Exhaust Pressure
-- **TIT**: Turbine Inlet Temperature
-- **TAT**: Turbine After Temperature
-- **CDP**: Compressor Discharge Pressure
-- **TEY**: Turbine Energy Yield
-- **CO**: Carbon Monoxide (Target 1)
-- **NOx**: Nitrogen Oxides (Target 2)
+### How to Use the Dataset
+Download the .zip archive containing gt_2011.xlsx through gt_2015.xlsx.
 
+Extract all .xlsx files into the ./data directory.
+
+Use the provided preprocessing script (preprocess.py) to load and convert them to .csv.
+
+### Original Features
+
+| Column | Description                                    |
+| ------ | ---------------------------------------------- |
+| AT     | Ambient Temperature (°C)                       |
+| AP     | Ambient Pressure (mbar)                        |
+| AH     | Ambient Humidity (%)                           |
+| AFDP   | Air Filter Differential Pressure (mbar)        |
+| GTEP   | Gas Turbine Exhaust Pressure (mbar)            |
+| TIT    | Turbine Inlet Temperature (°C)                 |
+| TAT    | Turbine After Temperature (°C)                 |
+| CDP    | Compressor Discharge Pressure (mbar)           |
+| TEY    | Turbine Energy Yield (MWh)                     |
+| CO     | Carbon Monoxide Emissions (mg/m³)              |
+| NOx    | Nitrogen Oxide Emissions (mg/m³) ⬅️ **Target** |
 
 ---
 
 ## 🔍 Project Workflow
 
-1. **Data Exploration and Preprocessing**
-   - Analyze data distribution, check for missing values, and visualize key features.
-   - Standardize and normalize data for deep learning.
+1. Data Preprocessing
+* Convert .xlsx to .csv and split chronologically into train/val/test.
+* Standardize and clean sensor data.
 
-2. **Model Design and Training**
-   - Build a neural network using TensorFlow/Keras.
-   - Train the model to predict two targets: CO and NOx emissions.
+2. Feature Engineering
+* Compute synthetic features such as:
+* Energy_Efficiency = TEY / GTEP
+* Combustion_Efficiency = TIT - TAT
+* Humidity_Temperature_Ratio = AH / AT
 
-3. **Evaluation**
-   - Evaluate the model performance using metrics like Mean Squared Error (MSE) and R².
-   - Visualize predictions vs. actual values.
+3. Model Training
+* Train and compare multiple models: Random Forest, XGBoost, MLP.
+* Use grid search and cross-validation for hyperparameter tuning.
 
-4. **Optimization and Deployment**
-   - Tune hyperparameters using techniques like Grid Search or Bayesian Optimization.
-   - Optionally deploy the model using Flask/Streamlit for interactive prediction.
+4. Evaluation
+* Metrics: MAE, RMSE, R².
+* Visualizations: feature correlation, distributions, prediction plots.
+
+5. Export
+* Save trained models (joblib) and predictions on test data.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Programming Language**: Python
-- **Libraries**:
-  - Data Processing: Pandas, NumPy
-  - Visualization: Matplotlib, Seaborn
-  - Deep Learning: TensorFlow/Keras
-- **Optional Deployment**: Flask, Streamlit
+* Language: Python 3.8+
+* Data Handling: pandas, numpy
+* Visualization: matplotlib, seaborn
+* ML Models: scikit-learn, XGBoost, TensorFlow (optional for MLP)
 
 ---
 
 ## 🚀 How to Run
-## Setting Up Kaggle API
 
-To download datasets from Kaggle, you need to set up the Kaggle API:
-
-1. Log in to [Kaggle](https://www.kaggle.com).
-2. Go to "My Account" > "API" > "Create New API Token".
-3. Download the `kaggle.json` file.
-4. Place `kaggle.json` in the following location:
-   - **Windows**: `C:\Users\<YourUsername>\.kaggle\kaggle.json`
-   - **Linux/Mac**: `~/.kaggle/kaggle.json`
-5. Make sure the file has the correct permissions:
-   ```bash
-   chmod 600 ~/.kaggle/kaggle.json
 
 ### Prerequisites
 
