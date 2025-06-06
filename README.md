@@ -65,7 +65,24 @@ Use the provided preprocessing script (preprocess.py) to load and convert them t
 ---
 
 ## 🚀 How to Run
-
+1. Clone the repository:
+```
+git clone https://github.com/AlicjaLena/ML4NOxPrediction.git
+cd ML4NOxPrediction
+```
+2. Install dependencies:
+```
+pip install -r requirements.txt
+```  
+3. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
+4. Preprocess and engineer features:
+```
+python preprocess.py
+```   
+5. Train the model (example):
+```
+python models/train_xgb.py
+``` 
 
 ### Prerequisites
 
