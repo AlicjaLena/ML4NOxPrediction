@@ -90,3 +90,6 @@ python models/train_xgb.py
 - Install dependencies using:
   ```bash
   pip install -r requirements.txt
+
+  ### 📄 License
+  Data is available under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode). This project code is released under the MIT License.
