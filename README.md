@@ -33,7 +33,7 @@ Use the provided preprocessing script (preprocess.py) to load and convert them t
 ## 🔍 Project Workflow
 
 1. Data Preprocessing
-* Convert .xlsx to .csv and split chronologically into train/val/test.
+* Import .csv files and split chronologically into train/val/test.
 * Standardize and clean sensor data.
 
 2. Feature Engineering
