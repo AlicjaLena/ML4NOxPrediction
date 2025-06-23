@@ -123,17 +123,9 @@ python models/predict.py
 * Trained models: ./artifacts/
 
 💡 Alternative startup method
-1. Clone the repository:
-```
-git clone https://github.com/AlicjaLena/ML4NOxPrediction.git
-cd ML4NOxPrediction
-```
-2. Install dependencies:
-```
-pip install -r requirements.txt
-```  
-3. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
-4. Run main.py:
+1. Clone the repository, set up the execution environment, and install dependencies as in the previous step.
+2. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
+3. Run main.py:
 ```
 python main.py
 ```
