@@ -79,12 +79,15 @@ python -m venv venv
 venv\Scripts\activate
 ```
 </details> <details> <summary><strong>macOS / Linux (bash / zsh)</strong></summary>
+ 
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
 </details>
+
 After activation, install the dependencies:
+
 ```
 pip install -r requirements.txt
 ```  
