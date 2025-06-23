@@ -65,12 +65,26 @@ Use the provided preprocessing script (preprocess.py) to load and convert them t
 ---
 
 ## 🚀 How to Run
+🔁 Full Analysis Reproduction Guide
 1. Clone the repository:
 ```
 git clone https://github.com/AlicjaLena/ML4NOxPrediction.git
 cd ML4NOxPrediction
 ```
 2. Install dependencies:
+Before installing dependencies, it's recommended to isolate the environment:
+<details> <summary><strong>Windows (CMD / PowerShell)</strong></summary>
+```
+python -m venv venv
+venv\Scripts\activate
+```
+</details> <details> <summary><strong>macOS / Linux (bash / zsh)</strong></summary>
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+</details>
+After activation, install the dependencies:
 ```
 pip install -r requirements.txt
 ```  
@@ -92,6 +106,34 @@ python features/preprocess.py
   ```
   python models/train_mlp.py
   ``` 
+6. Compare models
+```
+python models/compare_models.py
+```
+7. Predict on Test Set
+```
+python models/predict.py
+```
+8. View Results
+* Prediction plots: in ./results/figures/
+* Predictions: ./results/NOX_predictions_from_test.csv
+* Trained models: ./artifacts/
+
+💡 Alternative startup method
+1. Clone the repository:
+```
+git clone https://github.com/AlicjaLena/ML4NOxPrediction.git
+cd ML4NOxPrediction
+```
+2. Install dependencies:
+```
+pip install -r requirements.txt
+```  
+3. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
+4. Run main.py:
+```
+python main.py
+```
 
 ### Prerequisites
 
