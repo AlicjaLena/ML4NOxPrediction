@@ -10,7 +10,7 @@ Download the .zip archive containing gt_2011.xlsx through gt_2015.xlsx.
 
 Extract all .xlsx files into the ./data directory.
 
-Use the provided preprocessing script (preprocess.py) to load and convert them to .csv.
+Use the provided preprocessing script (features/preprocess.py) to load and convert them to .csv.
 
 ### Original Features
 
