@@ -75,14 +75,23 @@ cd ML4NOxPrediction
 pip install -r requirements.txt
 ```  
 3. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
-4. Preprocess and engineer features:
+4. Run preprocessing to convert .xlsx to .csv and split into train/val/test:
 ```
-python preprocess.py
+python features/preprocess.py
 ```   
-5. Train the model (example):
-```
-python models/train_xgb.py
-``` 
+5. Train models:
+  * XGBoost
+  ```
+  python models/train_xgb.py
+  ```
+  * Random Fores:
+  ```
+  python models/train_rf.py
+  ```
+  * MLP
+  ```
+  python models/train_mlp.py
+  ``` 
 
 ### Prerequisites
 
