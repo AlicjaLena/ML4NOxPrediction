@@ -33,7 +33,7 @@ Use the provided preprocessing script (features/preprocess.py) to load and conve
 ## 🔍 Project Workflow
 
 1. Data Preprocessing
-* Convert .xlsx to .csv and split chronologically into train/val/test.
+* Import .csv files and split chronologically into train/val/test.
 * Standardize and clean sensor data.
 
 2. Feature Engineering
@@ -65,7 +65,70 @@ Use the provided preprocessing script (features/preprocess.py) to load and conve
 ---
 
 ## 🚀 How to Run
+🔁 Full Analysis Reproduction Guide
+1. Clone the repository:
+```
+git clone https://github.com/AlicjaLena/ML4NOxPrediction.git
+cd ML4NOxPrediction
+```
+2. Install dependencies:
+Before installing dependencies, it's recommended to isolate the environment:
+<details> <summary><strong>Windows (CMD / PowerShell)</strong></summary>
+```
+python -m venv venv
+venv\Scripts\activate
+```
+</details> <details> <summary><strong>macOS / Linux (bash / zsh)</strong></summary>
+ 
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+</details>
 
+After activation, install the dependencies:
+
+```
+pip install -r requirements.txt
+```  
+3. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
+4. Run preprocessing to convert .xlsx to .csv and split into train/val/test:
+```
+python features/preprocess.py
+```   
+5. Train models:
+  * XGBoost
+  ```
+  python models/train_xgb.py
+  ```
+  * Random Fores:
+  ```
+  python models/train_rf.py
+  ```
+  * MLP
+  ```
+  python models/train_mlp.py
+  ``` 
+6. Compare models
+```
+python models/compare_models.py
+```
+7. Predict on Test Set
+```
+python models/predict.py
+```
+8. View Results
+* Prediction plots: in ./results/figures/
+* Predictions: ./results/NOX_predictions_from_test.csv
+* Trained models: ./artifacts/
+
+💡 Alternative startup method
+1. Clone the repository, set up the execution environment, and install dependencies as in the previous step.
+2. Place the csv files (gt_2011.csv to gt_2015.csv) in ./data
+3. Run main.py:
+```
+python main.py
+```
 
 ### Prerequisites
 
@@ -73,3 +136,6 @@ Use the provided preprocessing script (features/preprocess.py) to load and conve
 - Install dependencies using:
   ```bash
   pip install -r requirements.txt
+  ```
+### 📄 License
+Data is available under the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/legalcode). This project code is released under the MIT License.
