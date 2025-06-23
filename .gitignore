@@ -1,7 +1,26 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+
+# Notebooks
+notebooks/eda.ipynb
+notebooks/modeling_overview.ipynb
+
+# Models and checkpoints
+artifacts/
+results/
+figures/
+*.joblib
+*.keras
+*.json
+*.csv
+
+# Virtual environment
+.env
 
 # C extensions
 *.so
