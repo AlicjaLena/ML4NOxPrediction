@@ -51,7 +51,7 @@ Use the provided preprocessing script (features/preprocess.py) to load and conve
 * Visualizations: feature correlation, distributions, prediction plots.
 
 5. Export
-* Save trained models (joblib) and predictions on test data.
+* Save trained models (in joblib format) and predictions on the test data.
 
 ---
 
