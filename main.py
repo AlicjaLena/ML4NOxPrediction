@@ -7,10 +7,10 @@ import logging
 import sys
 
 # Adjust imports if modules are reorganized into packages
-from features import preprocess
+from features.data_pipeline import main as prepare_data
 from models.train_rf import main as train_rf_main
 from models.train_xgb import main as train_xgb_main
-from models.train_mlp import main as train_mlp_main
+# from models.train_mlp import main as train_mlp_main
 from models.compare_models import main as compare_main
 from models.predict import main as predict_main
 
@@ -23,8 +23,8 @@ logging.basicConfig(
 
 def run_pipeline():
     try:
-        logging.info("Step 1: Data preprocessing")
-        preprocess.main()
+        logging.info("Step 1: Load data and create engineered features")
+        train_df, val_df, test_df = prepare_data()
 
         logging.info("Step 2: Train Random Forest model")
         train_rf_main()
@@ -32,8 +32,8 @@ def run_pipeline():
         logging.info("Step 3: Train XGBoost model")
         train_xgb_main()
 
-        logging.info("Step 4: Train MLP model")
-        train_mlp_main()
+        # logging.info("Step 4: Train MLP model")
+        # train_mlp_main()
 
         logging.info("Step 5: Compare model performance")
         compare_main()
